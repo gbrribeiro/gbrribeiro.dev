@@ -1,0 +1,10 @@
+/Migrations
+appsettings.json
+.sonarqube
+.vs
+/.vs
+/bin
+bin
+/obj
+obj
+/Script.sql
