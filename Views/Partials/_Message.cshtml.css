@@ -1,0 +1,33 @@
+﻿body {
+}
+
+.input-div {
+    margin: 0 1rem 0 1rem !important;
+}
+
+#message-div {
+    margin: 0 1rem 0 1rem !important;
+}
+
+@media (max-width: 500px) {
+    .submit-button {
+        margin: 0 !important;
+    }
+    #submit-div {
+        height: 40% !important;
+        margin: 0 0.5rem 0 0.5rem !important;
+    }
+    #submit-button {
+        margin: 0 1rem 0 1rem !important;
+    }
+    .input, .input-div {
+        margin: 0 0.3rem 0 0.3rem !important;
+    }
+    .input-div {
+        height: 50% !important;
+    }
+    #message-div {
+        margin: 0 0.5rem 0 0.5rem !important;
+    }
+
+}
