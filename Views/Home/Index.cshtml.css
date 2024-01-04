@@ -98,10 +98,17 @@ h3 {
 }
 
 /*Mobile media query*/
+
 @media (max-width: 500px){
     #navbar {
         box-sizing: content-box;
         padding: 2rem 2rem 0 2rem;
+    }
+    #mine-desc-text-box {
+        height: auto !important;
+    }
+    h1 {
+        font-size: 10vw !important;
     }
     p {
         overflow-wrap:break-word;
