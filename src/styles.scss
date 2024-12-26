@@ -1,1 +1,294 @@
 /* You can add global styles to this file, and also import other style files */
+#navbar {
+    box-sizing:content-box;
+    padding: 5rem 5rem 0 5rem;
+}
+
+#project-list::-webkit-scrollbar {
+    display:none;
+}
+#page-1-mobile {
+    display:none !important;
+}
+
+.menu span {
+    color: yellow;
+}
+ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#image-contact-me {
+    background-image: url('/assets/profile-gbrribeiro.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+h3 {
+    color: yellow;
+}
+
+/*Menu logic*/
+#menu-list {
+    visibility:hidden;
+    opacity:0;
+}
+.open-menu {
+    animation:openMenu 0.2s ease forwards;
+}
+.close-menu {
+    animation: closeMenu 0.2s ease forwards;
+}
+
+@keyframes openMenu {
+    0% {
+        visibility: visible;
+        opacity: 0;
+        transform: translate(50%,-50%) scale(5%);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(100%);
+    }
+}
+
+@keyframes closeMenu {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(100%);
+    }
+    100% {
+        visibility: visible;
+        opacity: 0;
+        transform: translate(50%,-50%) scale(5%);
+    }
+
+}
+
+/* Scrollbar logic */
+.current-active {
+    animation: turnOn 1s ease forwards;
+}
+
+.current-unactive {
+    animation: turnOff 1s normal forwards;
+}
+.scrollbar-dot {
+    border: solid 2px yellow;
+}
+
+@keyframes turnOn {
+    from {
+        background-color: rgba(0,0,0,0);
+    }
+    to {
+        background-color: yellow;
+    }
+
+}
+
+@keyframes turnOff {
+    from {
+        background-color: yellow;
+    }
+
+    to {
+        background-color: rgba(0,0,0,0);
+    }
+}
+
+/*Mobile media query*/
+@media (max-width: 500px){
+    #navbar {
+        box-sizing: content-box;
+        padding: 2rem 2rem 0 2rem;
+    }
+    h1 {
+        font-size: 3rem !important;
+    }
+    p {
+        overflow-wrap:break-word;
+    }
+    #menu-list {
+        background-color: #FF4B91 !important;
+    }
+    #main-content-page-1 {
+        display: none !important;
+    }
+    #text-box {
+        margin: 5rem 0 0 5rem !important;
+    }
+    #page-0-content {
+        background: #0802A3 !important;
+    }
+    #page-1-mobile {
+        display: flex !important;
+    }
+    #menu-button {
+        fill: #FF4B91 !important;
+    }
+    #mine-desc-text-box{
+        margin-bottom:2vh !important; 
+    }
+    #main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 10%;
+    }
+    #image-box {
+        display:none !important;
+    }
+    #mobile-image-box {
+        display:block !important;
+    }
+    #text-box {
+        position: static !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .offcanvas {
+        max-width:70% !important;   
+    }
+    #page-2-content {
+        background:linear-gradient(90deg, #FF4B91 2%, #0802A3 2%, #0802A3 98%, #FF4B91 98%) !important;
+    }
+}
+
+
+/*Things with color*/
+h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #FF4B91;
+    font-weight:700;
+    font-size: 4rem;
+}
+
+#bg-1, #menu-button {
+    background-color: #0802A3;
+    fill: #0802A3;
+}
+
+#bg-2, #path-r, #path-g, #path-b {
+    background-color: #FF4B91;
+    fill: #FF4B91;
+}
+
+span {
+    color: yellow;
+}
+
+#mine-desc-text-box p {
+    color:yellow;
+}
+/*Animation*/
+.text-box-animation {
+    animation: appearTextBox 2s ease-in;
+}
+
+
+.image-frame-animation{
+    animation:imageFrameMoving 2s ease-out;
+}
+
+@keyframes imageFrameMoving {
+    from {
+        transform:translate(-10%,-10%);
+    }
+}
+
+.block-animation {
+    width: 1vh;
+    height: 7vh;
+    background-color: #FF4B91;
+    position: absolute;
+    animation: appearBlock 1s ease, 1s closeBlock 0.5s ease, 3s dissappearBlock 1s ease;
+    animation-fill-mode: forwards;
+    transform-origin: left;
+    z-index: 10;
+}
+
+.letter-animation {
+    animation: swipeToRight 0.5s ease normal;
+}
+
+
+#g {
+    transform: translateX(-30%);
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+#b {
+    transform: translateX(-30%);
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+#r {
+    transform: translateX(-30%);
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+@keyframes swipeToRight {
+    from {
+        visibility: visible;
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appearBlock {
+    from {
+        opacity: 0;
+        width: 12vh;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        width: 12vh;
+        transform: translateX(0);
+    }
+}
+
+@keyframes closeBlock {
+    30% {
+        width: 12vh;
+    }
+
+    100% {
+        width: 1vh;
+    }
+}
+
+@keyframes dissappearBlock {
+    0% {
+        transform: translate(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-100%);
+    }
+}
