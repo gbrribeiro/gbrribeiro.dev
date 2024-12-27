@@ -16,7 +16,12 @@ import { EmailPageComponent } from './email-page/email-page.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges {
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    this.currentPage = 0;
+    this.moveToPage(this.currentPage);
+  }
   currentPage = 0;
   maximumPages = 3;
   title = 'gbrribeiro.dev';
@@ -52,6 +57,7 @@ export class AppComponent implements OnInit {
     this.moveToPage(this.currentPage);
   }
 
+
   public goToNextPage(){
     console.log("next page");
     console.log(this.currentPage);
@@ -69,10 +75,10 @@ export class AppComponent implements OnInit {
     }
   }
 
-  moveToPage(nmbr : number){
+  public moveToPage(nmbr : number){
     this.activatePageDot(this.currentPage, nmbr);
     this.currentPage = nmbr;
-    document.getElementById(`page-${nmbr}`)?.scrollIntoView({behavior: 'smooth', block: 'start'});
+    document.getElementById(`page-${nmbr}`)?.scrollIntoView({behavior: 'smooth', block: 'center'});
   }
 
   activatePageDot(oldPage :number, activePage: number) {

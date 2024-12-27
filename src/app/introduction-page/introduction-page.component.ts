@@ -3,10 +3,12 @@ import {
   AfterViewInit,
   Component,
   Inject,
+  Input,
   OnInit,
   PLATFORM_ID,
 } from '@angular/core';
 import Typed from 'typed.js';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-introduction-page',
@@ -15,6 +17,8 @@ import Typed from 'typed.js';
   styleUrl: './introduction-page.component.scss',
 })
 export class IntroductionPageComponent implements OnInit {
+
+  @Input() appComponent: AppComponent | undefined;
 
   constructor() {
     
@@ -49,4 +53,16 @@ export class IntroductionPageComponent implements OnInit {
     menu!.classList.remove('close-menu');
     menu!.classList.add('open-menu');
   }
+
+  goToProjects(){
+    this.appComponent?.moveToPage(2);
+    this.closeMenu();
+  }
+
+  goToContacts(){
+    this.appComponent?.moveToPage(3);
+    this.closeMenu();
+
+  }
+  
 }
