@@ -27,8 +27,8 @@ export class EmailPageComponent {
     if(this.actorForm.valid) {
       var email = new EmailDto(this.actorForm.value.email, this.actorForm.value.name, this.actorForm.value.message);
       var emailService = new EmailSendingService();
-      // emailService.sendEmail(email);
-      // emailService.sendEmailToSender(email.email);
+      emailService.sendEmail(email);
+      emailService.sendEmailToSender(email.email);
 
       this.actorForm.reset();
       alert("Success! Your email has been sent.");

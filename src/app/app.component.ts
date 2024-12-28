@@ -33,7 +33,7 @@ export class AppComponent implements OnInit, OnChanges {
     if (this.isScrolling == false) {
       this.isScrolling = true;
 
-      const delta = event.deltaY; // deltaY é a alternativa ao wheelDelta
+      var delta = event.deltaY; // deltaY é a alternativa ao wheelDelta
 
       if (delta > 0) {
         this.goToNextPage();
@@ -42,6 +42,7 @@ export class AppComponent implements OnInit, OnChanges {
       }
 
       setTimeout(() => {
+        delta = 0;
         this.isScrolling = false;
       }, 1000); // Define o timeout para 1 segundo
     }
@@ -59,26 +60,21 @@ export class AppComponent implements OnInit, OnChanges {
 
 
   public goToNextPage(){
-    console.log("next page");
-    console.log(this.currentPage);
-
     if(this.currentPage < this.maximumPages){
       this.moveToPage(this.currentPage + 1);
     }
   }
 
   public goToPreviousPage(){
-    console.log("prev page");
-    console.log(this.currentPage);
     if(this.currentPage > 0){
       this.moveToPage(this.currentPage - 1);
     }
   }
 
-  public moveToPage(nmbr : number){
+  moveToPage(nmbr : number){
     this.activatePageDot(this.currentPage, nmbr);
     this.currentPage = nmbr;
-    document.getElementById(`page-${nmbr}`)?.scrollIntoView({behavior: 'smooth', block: 'center'});
+    document.getElementById(`page-${nmbr}`)?.scrollIntoView({behavior: 'smooth', block: 'start'});
   }
 
   activatePageDot(oldPage :number, activePage: number) {
