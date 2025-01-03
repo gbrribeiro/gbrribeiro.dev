@@ -11,10 +11,18 @@ export const Projects: ProjectViewModel[] = [
     ),
     new ProjectViewModel(
         "2",
-        "Lar REST API Challenge",
-        "Lar REST API made for a hiring challenge.",
+        "Lar Tech",
+        "Lar .NET REST API made for a hiring challenge.",
         "/assets/lar-logo.jpg",
         "https://github.com/gbrribeiro/lar-tech",
-        undefined // Em TypeScript, usamos `undefined` para valores nulos.
+        undefined
+    ),
+    new ProjectViewModel(
+        "3",
+        "Arduino Automated Irrigation System",
+        "Arduino Automated Irrigation System made for a college project.",
+        "/assets/flutter-screen.png",
+        "https://github.com/gbrribeiro/uniwater_super",
+        undefined
     )
 ];

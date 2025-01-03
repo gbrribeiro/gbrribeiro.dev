@@ -16,12 +16,7 @@ import { EmailPageComponent } from './email-page/email-page.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit, OnChanges {
-  
-  ngOnChanges(changes: SimpleChanges): void {
-    this.currentPage = 0;
-    this.moveToPage(this.currentPage);
-  }
+export class AppComponent implements OnInit {
   currentPage = 0;
   maximumPages = 3;
   title = 'gbrribeiro.dev';
@@ -34,8 +29,7 @@ export class AppComponent implements OnInit, OnChanges {
       this.isScrolling = true;
 
       var delta = event.deltaY; // deltaY é a alternativa ao wheelDelta
-
-      if (delta > 0) {
+      if (delta > 1) {
         this.goToNextPage();
       } else if (delta < 0) {
         this.goToPreviousPage();
@@ -54,8 +48,6 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.currentPage = 0;
-    this.moveToPage(this.currentPage);
   }
 
 
